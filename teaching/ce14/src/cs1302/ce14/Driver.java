@@ -31,7 +31,32 @@ public class Driver {
         };  
         
         // YOUR CODE DOWN HERE
+        // Shape[] shapes1 = new Shape[3];
+        // Circle[] circles2 = new Circle[3];
         
+        // fill(shapes1, new Rectangle(2, 2));
+        // fill(circles2, new Circle(2));
+
+        // System.out.println(shapes1[1]);
+        // System.out.println(circles2);
+
+        // Snippet 1
+        String[] strings = new String[] { "a", "b" };
+        fill(strings, "c");
+        System.out.println(Arrays.toString(strings));
     } // main
+
+    /**
+    * Given a reference to an array specified by {@code array}, fill each
+    * element by assigning it the value specified by {@code val}. 
+    *
+    * @param <T>    element type
+    * @param array  array to fill
+    * @param val    value to assign to each element
+    */
+    public static <T> void fill(T[] array, T val) {
+        for (int i = 0; i < array.length; i++)
+            array[i] = val;
+    }
 
 } // Driver
