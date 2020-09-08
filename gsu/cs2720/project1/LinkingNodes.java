@@ -29,7 +29,7 @@ public class LinkingNodes {
 
         System.out.print("\nEnter a name to check for: ");
         userInput = keyboard.nextLine();
-        System.out.println("Does " + userInput + " exist in namesBag? " + namesBag.contains(userInput));
+        System.out.println("\nDoes " + userInput + " exist in namesBag? " + namesBag.contains(userInput));
 
         System.out.println("\nCurrent namesBag content: ");
         namesBag.printBag();
