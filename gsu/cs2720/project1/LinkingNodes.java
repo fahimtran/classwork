@@ -14,7 +14,7 @@ public class LinkingNodes {
         int numberOfNames = 4;
 
         System.out.println("\nWelcome to the LinkedBag Program!");
-        System.out.print("You will enter " + numberOfNames + " names, delete a name, check for a name, and see the end result!");
+        System.out.println("You will enter " + numberOfNames + " names, delete a name, check for a name, and see the end result!");
         for (int i = 1; i <= numberOfNames; i++) {
             System.out.print("Enter name " + i + ": ");
             userInput = keyboard.nextLine();
@@ -161,6 +161,7 @@ final class LinkedBag<T> implements BagInterface<T> {
         return result;
     }
 
+    /** Prints the content of the bag. */
     public void printBag() {
         Node head = firstNode;
         while (head != null) {
@@ -234,7 +235,8 @@ interface BagInterface<T> {
 /** Output
 
 Welcome to the LinkedBag Program!
-You will enter 4 names, delete a name, check for a name, and see the end result!Enter name 1: John
+You will enter 4 names, delete a name, check for a name, and see the end result!
+Enter name 1: John
 Enter name 2: James
 Enter name 3: Susie
 Enter name 4: Poo
