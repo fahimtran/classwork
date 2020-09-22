@@ -1,3 +1,5 @@
+package cs1302.ce26;
+
 import java.util.Scanner;
 
 /**
@@ -7,17 +9,17 @@ public class TTTSolver {
 
     /**
      * The entry point for the program.
+     * 
      * @param args command-line arguments
      */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Please enter an initial board state " +
-                           "using 9 consecutive characters. Valid "  +
-                           "characters are X, O, and -.");
+        System.out.println("Please enter an initial board state " + "using 9 consecutive characters. Valid "
+                + "characters are X, O, and -.");
         String board = promptBoard(input);
         System.out.println("\nExisting outcomes: ");
         printAllBoards(board);
-        
+
         System.out.print("\nEvaluate X or O? ");
         char player = input.next().charAt(0);
         System.out.println("\nWinning Boards: ");
@@ -28,6 +30,7 @@ public class TTTSolver {
 
     /**
      * Prompt the user for a valid board configuration.
+     * 
      * @param input an input scanner
      * @return the board configuration
      */
@@ -41,11 +44,9 @@ public class TTTSolver {
     } // promptBoard
 
     /**
-     * Given an initial board state, this method prints
-     * all board states that can be reached via valid
-     * sequence of moves by each player. Therefore, the
-     * printout includes both intermediate board states
-     * as well as completed board states.
+     * Given an initial board state, this method prints all board states that can be
+     * reached via valid sequence of moves by each player. Therefore, the printout
+     * includes both intermediate board states as well as completed board states.
      *
      * @param board the game board
      */
@@ -67,7 +68,7 @@ public class TTTSolver {
                     tempIndex = board.indexOf("-", tempIndex + 1);
                     indexes[i] = tempIndex;
                 }
-            }    
+            }
 
             String nextBoard = "";
             char nextTurn = TTTUtility.whoseTurn(board);
@@ -87,7 +88,7 @@ public class TTTSolver {
             System.out.println();
             TTTUtility.printSquare(board);
             return 1;
-        } else if (isEnd){
+        } else if (isEnd) {
             return 0;
         } else {
             int[] indexes = new int[TTTUtility.count(board, '-')];
@@ -98,7 +99,7 @@ public class TTTSolver {
                     tempIndex = board.indexOf("-", tempIndex + 1);
                     indexes[i] = tempIndex;
                 }
-            }    
+            }
 
             String nextBoard = "";
             char nextTurn = TTTUtility.whoseTurn(board);
@@ -110,6 +111,5 @@ public class TTTSolver {
         }
         return counter;
     } // countAllWinningBoards
-
 
 } // TTTSolver
